@@ -49,6 +49,7 @@ class AnimatedCircle extends AnimatedWidget {
       : super(key: key, listenable: animation);
 
   Widget build(BuildContext context) {
+    MediaQueryData queryData = MediaQuery.of(context);
     final Animation<double> animation = listenable;
     return Center(
       child: Column(
@@ -58,29 +59,24 @@ class AnimatedCircle extends AnimatedWidget {
               child: Column(
                 children: <Widget>[
                   Container(
-
                     margin: EdgeInsets.symmetric(
-                      vertical: 200,
+                      vertical: queryData.size.height / 5,
                     ),
                     height: animation.value,
                     width: animation.value,
-                    child: Center(
-                      child: Center(
-                        child: Container(
-                          width: 300.0,
-                          height: 300.0,
-                          decoration: BoxDecoration(
-                              color: Colors.teal[200],
-                              shape: BoxShape.circle,
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.teal,
-                                  offset: Offset(0, 0),
-                                  blurRadius: 200,
-                                )
-                              ]),
-                        ),
-                      ),
+                    child: Container(
+                      width: 200.0,
+                      height: 200.0,
+                      decoration: BoxDecoration(
+                          color: Colors.teal[200],
+                          shape: BoxShape.circle,
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.teal,
+                              offset: Offset(0, 0),
+                              blurRadius: 200,
+                            )
+                          ]),
                     ),
                   ),
                 ],

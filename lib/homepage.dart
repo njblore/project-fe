@@ -173,10 +173,10 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
-      body: Column(children: [
+      body: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
         Expanded(
           child: Padding(
-            padding: const EdgeInsets.only(top: 50.00),
+            padding: const EdgeInsets.only(top: 20.00),
             child: GridView.count(
               crossAxisCount: 4,
               childAspectRatio: 1.0,
@@ -273,7 +273,8 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
         Quote(),
-        Image.asset("assets/hellocatbot.png")
+        Image.asset("assets/hellocatbot.png",
+            height: queryData.size.height * 0.4)
       ]),
       floatingActionButton: Container(
         height: 75.0,
